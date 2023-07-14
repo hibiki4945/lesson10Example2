@@ -64,7 +64,7 @@ fetch("mealList.json")
 btnEl.addEventListener("click", ()=>{
   // console.log(checklist);
   // console.dir(brunchEl);
-  // console.dir(brunchEl.checked);
+  // console.dir(brunchEl.checked); 
 
   let checkedList = [];
   checklist.forEach((item) =>{
