@@ -74,6 +74,11 @@ btnEl.addEventListener("click", ()=>{
     // console.log(item.value, item.checked);
   })
     // console.log(checkedList);
+    if(checkedList.length === 0){
+        checklist.forEach((item) =>{
+              checkedList.push(item.value);
+          })
+    }
 
 
     let filterList = [];
@@ -81,7 +86,9 @@ btnEl.addEventListener("click", ()=>{
     checkedList.forEach((category) => {
       mealList.forEach((store) => {
         if(store.category.includes(category)){
-          filterList.push(store);
+            if(filterList.includes(store) === false){
+              filterList.push(store);
+            };
         }
       });
     });
