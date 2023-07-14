@@ -60,15 +60,13 @@ fetch("mealList.json")
 
 
 //////////////////////////////////////////
-// // 監聽
+
 btnEl.addEventListener("click", ()=>{
   // console.log(checklist);
   // console.dir(brunchEl);
   // console.dir(brunchEl.checked);
 
-  // 有打勾的類型字串名稱的陣列
   let checkedList = [];
-  //            例 ["noodle", ...]
   checklist.forEach((item) =>{
     if(item.checked){
       checkedList.push(item.value);
@@ -80,16 +78,9 @@ btnEl.addEventListener("click", ()=>{
 
     let filterList = [];
 
-    // 此方法 有bug(當有複數Tag時 該物件元素將被 重複存入 filterList)(需用 判斷式(確認 該物件元素 是否已經存在))
-    // 勾選的類別名稱字串 類別名稱
-    //                   "noodle"
     checkedList.forEach((category) => {
-    // 餐廳資料  篩選  店面資料
       mealList.forEach((store) => {
-        // [陣列].includes(陣列方法(確認是否有包含))
-        // 例 ["noodle", ...]
         if(store.category.includes(category)){
-          //             物件裡的一個元素(陣列)
           filterList.push(store);
         }
       });
@@ -97,7 +88,6 @@ btnEl.addEventListener("click", ()=>{
 
     // console.log(filterList);
     
-    // 利用 filterList 做隨機
     const randomNum = Math.floor(Math.random()*filterList.length);
     // console.log(randomNum);
     
